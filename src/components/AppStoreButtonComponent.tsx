@@ -15,7 +15,7 @@ export const AppStoreButtonComponent = () => {
       className="inline-block"
     >
       <Image
-        src="/app-store-badge-black.svg"
+        src="./app-store-badge-black.svg"
         alt="Download on the App Store"
         width={135}
         height={40}
