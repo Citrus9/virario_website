@@ -19,6 +19,7 @@ const baseMetadata: Metadata = {
 
 export async function generateMetadata(): Promise<Metadata> {
   const appStoreId = process.env.APP_STORE_ID || process.env.NEXT_PUBLIC_APP_STORE_ID;
+  const testEnv = process.env.TEST;
   const affiliateData = process.env.APPLE_SMART_BANNER_AFFILIATE_DATA;
   const appArgument = process.env.APPLE_SMART_BANNER_APP_ARGUMENT;
 
@@ -30,8 +31,13 @@ export async function generateMetadata(): Promise<Metadata> {
     appleItunesAppContent = parts.join(", ");
   }
 
+  const titleWithAppId = appStoreId
+    ? `${baseMetadata.title} – ${appStoreId} - ${testEnv}`
+    : `${baseMetadata.title} – ${testEnv}`;
+
   return {
     ...baseMetadata,
+    title: titleWithAppId, // this is for testing the app store id
     other: appleItunesAppContent
       ? { "apple-itunes-app": appleItunesAppContent }
       : undefined,

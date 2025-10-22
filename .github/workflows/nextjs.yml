@@ -30,6 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       USE_REPO_BASEPATH: "false"  # root for custom domain
+      # Smart App Banner env vars (configure these in Repository Secrets)
+      APP_STORE_ID: ${{ secrets.APP_STORE_ID }}
+      NEXT_PUBLIC_APP_STORE_ID: ${{ secrets.NEXT_PUBLIC_APP_STORE_ID }}
+      APPLE_SMART_BANNER_AFFILIATE_DATA: ${{ secrets.APPLE_SMART_BANNER_AFFILIATE_DATA }}
+      APPLE_SMART_BANNER_APP_ARGUMENT: ${{ secrets.APPLE_SMART_BANNER_APP_ARGUMENT }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -77,6 +82,10 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Create .nojekyll
+        run: |
+          mkdir -p ./out
+          touch ./out/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
