@@ -30,11 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       USE_REPO_BASEPATH: "false"  # root for custom domain
-      # Smart App Banner env vars (configure these in Repository Secrets)
-      APP_STORE_ID: ${{ secrets.APP_STORE_ID }}
-      NEXT_PUBLIC_APP_STORE_ID: ${{ secrets.NEXT_PUBLIC_APP_STORE_ID }}
-      APPLE_SMART_BANNER_AFFILIATE_DATA: ${{ secrets.APPLE_SMART_BANNER_AFFILIATE_DATA }}
-      APPLE_SMART_BANNER_APP_ARGUMENT: ${{ secrets.APPLE_SMART_BANNER_APP_ARGUMENT }}
+      # Smart App Banner env vars (configure these in Actions → Variables)
+      APP_STORE_ID: ${{ vars.APP_STORE_ID }}
+      NEXT_PUBLIC_APP_STORE_ID: ${{ vars.NEXT_PUBLIC_APP_STORE_ID }}
+      APPLE_SMART_BANNER_AFFILIATE_DATA: ${{ vars.APPLE_SMART_BANNER_AFFILIATE_DATA }}
+      APPLE_SMART_BANNER_APP_ARGUMENT: ${{ vars.APPLE_SMART_BANNER_APP_ARGUMENT }}
+      TEST: ${{ vars.TEST }}
+      REPO: ${{ vars.REPO }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
