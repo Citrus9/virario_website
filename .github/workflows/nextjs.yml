@@ -28,6 +28,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     env:
       USE_REPO_BASEPATH: "false"  # root for custom domain
       # Smart App Banner env vars (configure these in Actions → Variables)
@@ -82,6 +84,20 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Create .env.production from vars
+        run: |
+          cat <<EOF > .env.production
+          APP_STORE_ID=${{ env.APP_STORE_ID }}
+          NEXT_PUBLIC_APP_STORE_ID=${{ env.NEXT_PUBLIC_APP_STORE_ID }}
+          TEST=${{ env.TEST }}
+          REPO=${{ env.REPO }}
+          EOF
+      - name: Debug effective env values
+        run: |
+          echo "vars.APP_STORE_ID=${{ vars.APP_STORE_ID }}"
+          echo "env.APP_STORE_ID=${APP_STORE_ID}"
+          echo "vars.TEST=${{ vars.TEST }}"
+          echo "env.TEST=${TEST}"
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Create .nojekyll
