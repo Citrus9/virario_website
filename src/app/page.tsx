@@ -1,8 +1,7 @@
-import Image from "next/image";
-import { AppStoreButtonComponent } from "@/components/AppStoreButtonComponent";
+
 import { Hero } from "@/components/hero/hero";
 import { Testimonials } from "@/components/testimonials/testimonials";
-import { Footer } from "@/components/footer/footer";
+
 import { FooterSimple } from "@/components/footer/footer-simple";
 
 

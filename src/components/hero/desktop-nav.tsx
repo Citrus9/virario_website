@@ -1,14 +1,7 @@
-import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { AppStoreButtonComponent } from "../AppStoreButtonComponent";
 import { ChevronLeft } from "lucide-react";
 
 type Props = {

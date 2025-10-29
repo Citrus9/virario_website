@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { TestimonialMarquee } from "@/components/testimonials/testimonial-marquee";
 import { PillAvatar, PillAvatarGroup } from "../ui/pill";
 import { Pill } from "../ui/pill";
