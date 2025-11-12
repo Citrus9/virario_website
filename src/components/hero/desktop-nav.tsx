@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
+import { AppStoreButtonComponent } from "../AppStoreButtonComponent";
 
 type Props = {
   items: {
@@ -12,20 +13,34 @@ type Props = {
   className?: string;
   showBackButton?: boolean;
   backHref?: string;
+  showCta?: boolean;
 };
 
-export function DesktopNav({ items, className, showBackButton, backHref }: Props) {
+export function DesktopNav({ items, className, showBackButton, backHref, showCta }: Props) {
   return (
-    <nav className={cn("mx-auto flex w-full max-w-7xl items-center justify-center gap-4", className)}>
-      {showBackButton ? (
-        <Link href={backHref || "/"} className="absolute left-4 inline-flex items-center gap-2 text-sm font-medium">
-          <ChevronLeft className="h-5 w-5" />
-          <span className="hidden sm:inline">Back</span>
-        </Link>
-      ) : null}
-      <Link href="/">
-        <Image src="/logo.svg" alt="logo" width={86} height={26} />
-      </Link>
+    <nav className={cn("relative mx-auto flex w-full max-w-7xl items-center", showCta ? "justify-between px-4" : "justify-center gap-4", className)}>
+      {showCta ? (
+        <>
+          <Link href="/" className="inline-flex items-center">
+            <Image src="/logo.svg" alt="logo" width={86} height={26} />
+          </Link>
+          <div className="ml-auto">
+            <AppStoreButtonComponent />
+          </div>
+        </>
+      ) : (
+        <>
+          {showBackButton ? (
+            <Link href={backHref || "/"} className="absolute left-4 inline-flex items-center gap-2 text-sm font-medium">
+              <ChevronLeft className="h-5 w-5" />
+              <span className="hidden sm:inline">Back</span>
+            </Link>
+          ) : null}
+          <Link href="/">
+            <Image src="/logo.svg" alt="logo" width={86} height={26} />
+          </Link>
+        </>
+      )}
       {/* <NavigationMenu>
         <NavigationMenuList className="gap-8">
           {items.map((item) => (

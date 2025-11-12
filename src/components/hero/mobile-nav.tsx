@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
+import { AppStoreButtonComponent } from "../AppStoreButtonComponent";
 
 type Props = {
   items: {
@@ -11,9 +12,10 @@ type Props = {
   className?: string;
   showBackButton?: boolean;
   backHref?: string;
+  showCta?: boolean;
 };
 
-export function MobileNav({ items, className, showBackButton, backHref }: Props) {
+export function MobileNav({ items, className, showBackButton, backHref, showCta }: Props) {
   return (
     <nav className={cn("flex w-full max-w-7xl items-center justify-between gap-4", className)}>
       {showBackButton ? (
@@ -25,6 +27,13 @@ export function MobileNav({ items, className, showBackButton, backHref }: Props)
       <Link href="/" className="mx-auto">
         <Image src="/logo.svg" alt="logo" width={86} height={26} />
       </Link>
+      {showCta ? (
+        <div className="ml-auto">
+          <AppStoreButtonComponent />
+        </div>
+      ) : (
+        <span />
+      )}
       {/* <Drawer direction="top">
         <DrawerTrigger className="relative -m-2 cursor-pointer p-2">
           <span className="sr-only">Open menu</span>

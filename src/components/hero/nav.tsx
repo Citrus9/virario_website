@@ -26,6 +26,7 @@ type Props = {
 
 export function Nav({ showBackButton, backHref }: Props) {
   const [scrolled, setScrolled] = useState(false);
+  const [showCta, setShowCta] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -34,6 +35,20 @@ export function Nav({ showBackButton, backHref }: Props) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const el = document.getElementById("app-store-cta");
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setShowCta(!entry.isIntersecting);
+      },
+      { root: null, threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -46,8 +61,8 @@ export function Nav({ showBackButton, backHref }: Props) {
       }
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-2">
-        <MobileNav className="flex md:hidden" items={navItems} showBackButton={showBackButton} backHref={backHref} />
-        <DesktopNav className="hidden md:flex" items={navItems} showBackButton={showBackButton} backHref={backHref} />
+        <MobileNav className="flex md:hidden" items={navItems} showBackButton={showBackButton} backHref={backHref} showCta={showCta} />
+        <DesktopNav className="hidden md:flex" items={navItems} showBackButton={showBackButton} backHref={backHref} showCta={showCta} />
       </div>
     </div>
   );
