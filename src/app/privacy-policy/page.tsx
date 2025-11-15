@@ -10,39 +10,36 @@ export const metadata: Metadata = {
   description: "Read how Virario collects, uses, and protects your data.",
 };
 
-const placeholderMarkdown = `# Privacy Policy
+const placeholderMarkdown = `
+# Privacy Policy
 
-Last updated: October 29, 2025
+## Analytics
 
-Welcome to Virario! This Privacy Policy explains how we collect, use, and safeguard your information when you use our services and website.
+We use analytics services to help us understand how the app is used, so we can improve features, fix problems, and make better product decisions.
 
-## Information We Collect
+### What is collected
 
-- Account information (such as email) if you create an account.
-- Usage data related to app features and interactions.
-- Device and diagnostic information to improve performance.
+Our analytics providers may collect:
 
-## How We Use Your Information
+- **Usage information**: general information about how you interact with the app (for example, which screens are viewed and how often the app is used).
+- **Device and app information**: such as device type, operating system, and app version.
+- **Purchase and subscription information**: limited details about in‑app purchases and subscription status (for example, which product was purchased and whether it renewed), as reported by the App Store and our billing provider.
 
-- To provide and maintain our services.
-- To improve product functionality and user experience.
-- To communicate updates, security alerts, and administrative messages.
+We do **not** use analytics to collect your name, email address, or other direct contact details for advertising, and we do **not** use advertising identifiers (like the IDFA) to track you across other apps or websites.
 
-## Data Sharing
+### How we use analytics
 
-We do not sell your personal data. We may share limited data with trusted service providers who help us operate our services, under strict confidentiality agreements.
+We use this information only to:
 
-## Data Retention
+- monitor app performance and reliability,
+- understand general usage patterns,
+- improve and optimize features, onboarding, and subscription flows.
 
-We retain data only as long as necessary for the purposes described above or as required by law.
+### Analytics providers
 
-## Your Rights
+We currently use trusted third‑party services (such as Mixpanel, Firebase Analytics, and RevenueCat) to process this data on our behalf. These providers act as our data processors and are bound by contractual obligations to protect your information.
 
-Depending on your location, you may have rights to access, correct, or delete your personal information.
-
-## Contact Us
-
-If you have any questions, contact us at [support@virario.app](mailto:support@virario.app).
+If you have any questions about our use of analytics, please contact us using the details in the “Contact” section of this policy.
 `;
 
 const markdownComponents: Components = {
