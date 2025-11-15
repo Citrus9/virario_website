@@ -1,92 +1,60 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { CircleEllipsis } from "lucide-react";
+import Image from "next/image";
 
 export default function TikTokInAppInterstitial() {
-  const [copied, setCopied] = useState(false);
-
-  const appUrl =
-    typeof window !== "undefined" ? `${window.location.origin}/ios` : "/ios";
-
-  useEffect(() => {
-    const live = document.getElementById("tiktok-toast");
-    if (live) {
-      live.focus();
-    }
-  }, []);
-
-  const copyLink = async () => {
-    try {
-      await navigator.clipboard.writeText(appUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // no-op if clipboard fails
-    }
-  };
-
   return (
-    <main className="min-h-dvh grid place-items-center bg-gradient-to-br from-fuchsia-500 to-purple-600 text-white p-6">
-      <section className="w-full max-w-md text-center">
-        <div className="relative rounded-2xl bg-white/95 text-neutral-900 p-5 shadow-xl">
-          <p
-            id="tiktok-toast"
-            tabIndex={-1}
-            role="status"
-            aria-live="polite"
-            className="text-lg font-semibold"
-          >
-            On TikTok, hit the 3 dots at the top right.
+    <main className="min-h-dvh flex flex-col items-center justify-start bg-gradient-to-br from-amber-400 to-orange-600 text-white p-6 font-sf-rounded-pro pt-[25vh]">
+      {/* Squiggly arrow pointing to top right */}
+      <img
+        src="/arrow-top-right-white.svg"
+        alt=""
+        className="fixed top-0 right-0 w-40 h-40 pointer-events-none"
+      />
+      
+      <section className="w-full max-w-xl text-center">
+        <div className="relative rounded-2xl bg-white/95 text-neutral-900 p-5 shadow-xl text-left">
+          <p className="text-lg font-semibold flex items-center justify-center gap-2 text-center">
+            <span>On</span>
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full">
+              <img
+                src="/Ionicons_logo-tiktok.svg"
+                alt="TikTok"
+                className="h-6 w-6"
+              />
+            </span>
+            <span>TikTok</span>
           </p>
-          <p className="mt-2">
-            Then tap &quot;Open in browser&quot; to download for free.
-          </p>
-
-          <div className="mt-4 flex items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={copyLink}
-              className="rounded-md bg-neutral-900 text-white px-3 py-2 text-sm"
-            >
-              Copy link
-            </button>
-            <a
-              href={appUrl}
-              className="rounded-md bg-neutral-200 text-neutral-900 px-3 py-2 text-sm"
-            >
-              I&apos;ve opened Safari
-            </a>
+          <div className="mt-4 space-y-3 text-lg font-bold">
+            <p className="flex items-center gap-2">
+              <span>1.</span>
+              <span>Tap</span>
+              <CircleEllipsis className="h-6 w-6" />
+              <span>on the top right corner.</span>
+            </p>
+            <p>
+              <span>2.</span>{" "}
+              <span>
+                Then tap{" "}
+                <span className="font-bold text-orange-500">
+                  &quot;Open in browser&quot;
+                </span>{" "}
+                to download for free.
+              </span>
+            </p>
           </div>
-
-          <svg
-            className="absolute -right-6 -top-6 h-20 w-20 text-white drop-shadow"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M6 58c18-10 30-26 38-48M44 12l14-4m-14 4 4 14"
-              stroke="currentColor"
-              strokeWidth="6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
         </div>
-
-        <p className="mt-4 opacity-90 text-sm">
-          If nothing happens, tap the menu &bull;&bull;&bull; and choose &quot;Open in
-          browser&quot;.
-        </p>
-        {copied && (
-          <p className="mt-2 text-xs opacity-90">
-            Link copied. Open Safari and paste if needed.
-          </p>
-        )}
       </section>
+
+      {/* Powered By section */}
+      <div className="fixed bottom-6 left-0 right-0 flex items-center justify-center gap-2 text-white/80 text-sm">
+        <span>Powered By</span>
+        <Image src="/logo.svg" alt="logo" width={86} height={26} />
+      </div>
     </main>
   );
 }
+
 
 

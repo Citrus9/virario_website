@@ -155,3 +155,8 @@
 .font-sf-rounded {
   font-family: "SF Pro Rounded", ui-rounded, "SF Pro Display", "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
 }
+
+.font-sf-rounded-pro {
+  font-family: "SF Pro Rounded", ui-rounded, "SF Pro Display", "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
