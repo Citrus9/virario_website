@@ -33,6 +33,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     ...baseMetadata,
+    icons: {
+      icon: '/logo_fire.svg',
+      apple: '/logo_fire.svg',
+    },
     // title: titleWithAppId, // this is for testing the app store id
     other: appleItunesAppContent
       ? { "apple-itunes-app": appleItunesAppContent }
