@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FooterBlur } from "@/components/footer/footer-blur";
 
 type FooterSimpleProps = {
   appName?: string;

@@ -16,7 +16,7 @@ type Props = {
   showCta?: boolean;
 };
 
-export function DesktopNav({ items, className, showBackButton, backHref, showCta }: Props) {
+export function DesktopNav({ className, showBackButton, backHref, showCta }: Props) {
   return (
     <nav className={cn("relative mx-auto flex w-full max-w-7xl items-center", showCta ? "justify-between px-4" : "justify-center gap-4", className)}>
       {showCta ? (

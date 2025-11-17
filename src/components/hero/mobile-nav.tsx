@@ -15,7 +15,7 @@ type Props = {
   showCta?: boolean;
 };
 
-export function MobileNav({ items, className, showBackButton, backHref, showCta }: Props) {
+export function MobileNav({ className, showBackButton, backHref, showCta }: Props) {
   return (
     <nav className={cn("flex w-full max-w-7xl items-center", showCta ? "justify-between gap-4" : "justify-center gap-4", className)}>
       {showCta ? (

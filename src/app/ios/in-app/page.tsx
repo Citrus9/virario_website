@@ -7,20 +7,24 @@ export default function TikTokInAppInterstitial() {
   return (
     <main className="min-h-dvh flex flex-col items-center justify-start bg-gradient-to-br from-amber-400 to-orange-600 text-white p-6 font-sf-rounded-pro pt-[22vh]">
       {/* Squiggly arrow pointing to top right */}
-      <img
+      <Image
         src="/arrow-top-right-white.svg"
         alt=""
+        width={160}
+        height={160}
         className="fixed top-0 right-0 w-40 h-40 pointer-events-none"
       />
       
       <section className="w-full max-w-xl text-center">
         <div className="relative rounded-2xl bg-white/95 text-neutral-900 p-5 shadow-xl text-left">
           <p className="text-lg font-semibold flex items-center justify-center gap-2 text-center">
-            <span>You're on</span>
+            <span>You&apos;re on</span>
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full">
-              <img
+              <Image
                 src="/Ionicons_logo-tiktok.svg"
                 alt="TikTok"
+                width={24}
+                height={24}
                 className="h-6 w-6"
               />
             </span>
