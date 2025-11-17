@@ -17,22 +17,30 @@ type Props = {
 
 export function MobileNav({ items, className, showBackButton, backHref, showCta }: Props) {
   return (
-    <nav className={cn("flex w-full max-w-7xl items-center justify-between gap-4", className)}>
-      {showBackButton ? (
-        <Link href={backHref || "/"} className="inline-flex items-center gap-1 text-sm font-medium">
-          <ChevronLeft className="h-6 w-6" />
-          <span className="sr-only">Back</span>
-        </Link>
-      ) : <span />}
-      <Link href="/" className="mx-auto">
-        <Image src="/logo.svg" alt="logo" width={86} height={26} />
-      </Link>
+    <nav className={cn("flex w-full max-w-7xl items-center", showCta ? "justify-between gap-4" : "justify-center gap-4", className)}>
       {showCta ? (
-        <div className="ml-auto">
-          <AppStoreButtonComponent />
-        </div>
+        <>
+          <Link href="/" className="inline-flex items-center gap-2">
+            <Image src="/logo_fire.svg" alt="logo" width={40} height={40} />
+            <span className="text-3xl font-black tracking-tight leading-none" style={{ fontFamily: 'SF Pro Rounded, ui-rounded, system-ui, sans-serif', color: '#FF8D28' }}>VIRARIO</span>
+          </Link>
+          <div className="ml-auto">
+            <AppStoreButtonComponent />
+          </div>
+        </>
       ) : (
-        <span />
+        <>
+          {showBackButton ? (
+            <Link href={backHref || "/"} className="absolute left-4 inline-flex items-center gap-1 text-sm font-medium">
+              <ChevronLeft className="h-6 w-6" />
+              <span className="sr-only">Back</span>
+            </Link>
+          ) : null}
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/logo_fire.svg" alt="logo" width={40} height={40} />
+            <span className="text-3xl font-black tracking-tight leading-none" style={{ fontFamily: 'SF Pro Rounded, ui-rounded, system-ui, sans-serif', color: '#FF8D28' }}>VIRARIO</span>
+          </Link>
+        </>
       )}
       {/* <Drawer direction="top">
         <DrawerTrigger className="relative -m-2 cursor-pointer p-2">

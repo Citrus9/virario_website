@@ -21,8 +21,9 @@ export function DesktopNav({ items, className, showBackButton, backHref, showCta
     <nav className={cn("relative mx-auto flex w-full max-w-7xl items-center", showCta ? "justify-between px-4" : "justify-center gap-4", className)}>
       {showCta ? (
         <>
-          <Link href="/" className="inline-flex items-center">
-            <Image src="/logo.svg" alt="logo" width={86} height={26} />
+          <Link href="/" className="inline-flex items-center gap-2">
+            <Image src="/logo_fire.svg" alt="logo" width={40} height={40} />
+            <span className="text-3xl font-black tracking-tight leading-none" style={{ fontFamily: 'SF Pro Rounded, ui-rounded, system-ui, sans-serif', color: '#FF8D28' }}>VIRARIO</span>
           </Link>
           <div className="ml-auto">
             <AppStoreButtonComponent />
@@ -36,8 +37,9 @@ export function DesktopNav({ items, className, showBackButton, backHref, showCta
               <span className="hidden sm:inline">Back</span>
             </Link>
           ) : null}
-          <Link href="/">
-            <Image src="/logo.svg" alt="logo" width={86} height={26} />
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/logo_fire.svg" alt="logo" width={40} height={40} />
+            <span className="text-3xl font-black tracking-tight leading-none" style={{ fontFamily: 'SF Pro Rounded, ui-rounded, system-ui, sans-serif', color: '#FF8D28' }}>VIRARIO</span>
           </Link>
         </>
       )}

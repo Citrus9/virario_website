@@ -60,7 +60,7 @@ export function Nav({ showBackButton, backHref }: Props) {
           : " bg-transparent")
       }
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-2">
+      <div className="mx-auto w-full max-w-7xl px-4 py-1">
         <MobileNav className="flex md:hidden" items={navItems} showBackButton={showBackButton} backHref={backHref} showCta={showCta} />
         <DesktopNav className="hidden md:flex" items={navItems} showBackButton={showBackButton} backHref={backHref} showCta={showCta} />
       </div>

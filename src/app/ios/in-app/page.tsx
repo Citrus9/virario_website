@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function TikTokInAppInterstitial() {
   return (
-    <main className="min-h-dvh flex flex-col items-center justify-start bg-gradient-to-br from-amber-400 to-orange-600 text-white p-6 font-sf-rounded-pro pt-[25vh]">
+    <main className="min-h-dvh flex flex-col items-center justify-start bg-gradient-to-br from-amber-400 to-orange-600 text-white p-6 font-sf-rounded-pro pt-[22vh]">
       {/* Squiggly arrow pointing to top right */}
       <img
         src="/arrow-top-right-white.svg"
@@ -16,7 +16,7 @@ export default function TikTokInAppInterstitial() {
       <section className="w-full max-w-xl text-center">
         <div className="relative rounded-2xl bg-white/95 text-neutral-900 p-5 shadow-xl text-left">
           <p className="text-lg font-semibold flex items-center justify-center gap-2 text-center">
-            <span>On</span>
+            <span>You're on</span>
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full">
               <img
                 src="/Ionicons_logo-tiktok.svg"
@@ -48,9 +48,9 @@ export default function TikTokInAppInterstitial() {
       </section>
 
       {/* Powered By section */}
-      <div className="fixed bottom-6 left-0 right-0 flex items-center justify-center gap-2 text-white/80 text-sm">
-        <span>Powered By</span>
-        <Image src="/logo.svg" alt="logo" width={86} height={26} />
+      <div className="flex-1 flex flex-col items-center justify-center gap-4 text-white text-sm">
+        <Image src="/logo-app.svg" alt="logo" width={250} height={250} style={{ borderRadius: '20%', filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))' }} />
+        <p className="text-5xl font-black">Virario</p>
       </div>
     </main>
   );
