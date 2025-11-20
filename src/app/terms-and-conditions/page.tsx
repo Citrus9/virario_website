@@ -91,7 +91,7 @@ Data collected through the app is used exclusively to:
 
 Users can withdraw consent at any time by:
 - Disabling permissions in device settings
-- Contacting support to delete account data
+- Contacting support to delete account data 
 - Using in-app privacy controls
 
 ## 6. Compliance with Privacy Laws
@@ -106,7 +106,7 @@ Virario complies with GDPR, CCPA, and similar privacy statutes. All data collect
 
 ### 6.2 Data Protection
 
-For any data privacy concerns, contact us at **support@virario.com**.
+For any data privacy concerns, contact us at **virario.help@gmail.com**.
 
 ## 7. Paid Functionality
 
@@ -260,7 +260,7 @@ Continued use after changes constitutes acceptance of the updated Terms.
 
 For any questions, concerns, or support regarding these Terms, please contact us at:
 
-**Email**: support@virario.com
+**Email**: virario.help@gmail.com
 
 ---
 
@@ -337,7 +337,7 @@ Virario complies with GDPR, CCPA, and similar privacy statutes. All data process
 
 ### 6.2 Data Protection Officer
 
-For any data privacy concerns, contact us at **support@virario.com**.
+For any data privacy concerns, contact us at **virario.help@gmail.com**.
 
 ## 7. Credit System and Payments
 
@@ -412,7 +412,7 @@ If any provision of this EULA is found to be unenforceable or invalid, the remai
 
 For any questions or concerns regarding this EULA, please contact us at:
 
-**Email**: support@virario.com
+**Email**: virario.help@gmail.com
 
 ---
 

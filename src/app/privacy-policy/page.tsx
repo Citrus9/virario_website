@@ -160,7 +160,7 @@ We currently use trusted third‑party services (such as Mixpanel, Firebase Anal
 
 ### 3. Data Access and Deletion
 
-- Request access to or deletion of your personal data by contacting us at **support@virario.com**.
+- Request access to or deletion of your personal data by contacting us at **virario.help@gmail.com**.
 - You can delete your account and associated data directly through the app settings.
 
 ### 4. Content Control
@@ -206,7 +206,7 @@ Your continued use of Virario after the changes become effective constitutes you
 
 If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:
 
-**Email**: support@virario.com
+**Email**: virario.help@gmail.com
 
 We will respond to your inquiry within a reasonable timeframe.
 
